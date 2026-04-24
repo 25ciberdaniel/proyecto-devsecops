@@ -1,17 +1,18 @@
 pipeline {
     agent any
+
     stages {
         stage('Descargar Código') {
             steps {
-                echo 'Clonando el repositorio con credenciales...'
+                echo 'Clonando el repositorio...'
                 git credentialsId: 'github-token', 
                     url: 'https://github.com/25ciberdaniel/proyecto-devsecops.git', 
                     branch: 'desarrollo'
             }
         }
-        stage('Construir Imagen Docker (Build)') {
+        stage('Construir Imagen Docker') {
             steps {
-                echo 'Construyendo el contenedor seguro...'
+                echo 'Construyendo la imagen...'
                 sh 'docker build -t mi-app-segura:latest .'
             }
         }
