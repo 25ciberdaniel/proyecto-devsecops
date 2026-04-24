@@ -6,7 +6,7 @@ steps {
 echo 'Clonando el repositorio desde GitHub...'
 // Cambia esta URL por la tuya
 git branch: 'desarrollo', url:
-'https://github.com/TU_USUARIO/proyecto-devsecops.git'
+'https://github.com/25ciberdaniel/proyecto-devsecops.git'
 }
 }
 stage('Construir Imagen Docker (Build)') {
